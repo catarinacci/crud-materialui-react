@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "title": "--CRUD--",
+        "image": "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*2eBdh0vLZjUyCDF6x1EqvQ.png",
+        "path": "/crud"
+    },
+    {
+        "id":2,
+        "title": "--Clima--",
+        "image":"https://cloudfront-us-east-1.images.arcpublishing.com/infobae/SRLCDVUKN5F6HLEZUWUQSASB7A.jpg",
+        "path": "/clima"
+    },
+    {
+        "id":3,
+        "title": "--Pokemon List--",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png",
+        "path": "/pokemon-list"
+    }
+]
