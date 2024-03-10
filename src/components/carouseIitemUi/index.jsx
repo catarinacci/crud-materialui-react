@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export default function ItemUi({ item }) {
   return (
-    <Paper>
+    <Paper >
       <img
         src={item.image}
         alt={item.title}

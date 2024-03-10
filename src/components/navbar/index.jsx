@@ -43,7 +43,7 @@ export default function NavBar() {
 
   return (
     <>
-      <AppBar position="static" color="success">
+      <AppBar position="sticky" color="success">
         <Toolbar>
           <IconButton
             color="inherit"
