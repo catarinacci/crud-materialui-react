@@ -1,0 +1,11 @@
+[
+    { "id": 1, "lastName": "Snow", "firstName": "Jon", "role": "Back End" },
+    { "id": 2, "lastName": "Lannister", "firstName": "Cersei", "role": 31 },
+    { "id": 3, "lastName": "Lannister", "firstName": "Jaime", "role": 31 },
+      { "id": 4, "lastName": "Stark", "firstName": "Arya", "role": 11 },
+      { "id": 5, "lastName": "Targaryen", "firstName": "Daenerys", "role": null },
+      { "id": 6, "lastName": "Melisandre", "firstName": null, "role": 150 },
+      { "id": 7, "lastName": "Clifford", "firstName": "Ferrara", "role": 44 },
+      { "id": 8, "lastName": "Frances", "firstName": "Rossini", "role": 36 },
+      { "id": 9, "lastName": "Roxie", "firstName": "Harvey", "role": 65 }
+]

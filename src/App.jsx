@@ -5,8 +5,9 @@ import NavBar from './components/navbar';
 import { Route, Routes } from 'react-router-dom';
 import Home from './page/home';
 import Clima from './page/clima';
-import Crud from './page/crud';
 import PokemonList from './page/pokemonList';
+import CrudPage from './page/crudPage';
+import CrudEdit from './page/crudEditPage';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/clima' element={<Clima/>}/>
-          <Route path='/crud' element={<Crud/>}/>
+          <Route path='/crud' element={<CrudPage/>}/>
+          <Route path='/crud-edit' element={<CrudEdit/>}/>
           <Route path='/pokemon-list' element={<PokemonList/>}/>
         </Routes>
       </Container>

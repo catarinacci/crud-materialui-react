@@ -1,7 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
+//import { useState } from "react";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import { LoadingButton } from "@mui/lab";
+import { NavLink } from "react-router-dom";
+//import usuarios from "../../helper/usuarios.json";
 
 const columns = [
   { field: "id", headerName: "ID", width: 90 },
@@ -24,30 +27,36 @@ const columns = [
     editable: true,
   },
 ];
+//const [users, setUsers] = useState([])
 
-const rows = [
-  { id: 1, lastName: "Snow", firstName: "Jon", role: "Back End" },
-  { id: 2, lastName: "Lannister", firstName: "Cersei", role: 31 },
-  { id: 3, lastName: "Lannister", firstName: "Jaime", role: 31 },
-    { id: 4, lastName: 'Stark', firstName: 'Arya', role: 11 },
-    { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', role: null },
-    { id: 6, lastName: 'Melisandre', firstName: null, role: 150 },
-    { id: 7, lastName: 'Clifford', firstName: 'Ferrara', role: 44 },
-    { id: 8, lastName: 'Frances', firstName: 'Rossini', role: 36 },
-    { id: 9, lastName: 'Roxie', firstName: 'Harvey', role: 65 },
-];
 
-export default function CrudTabe() {
+
+// setUsers(usuarios)
+
+
+export default function CrudTabe({users, setEditUsers}) {
+
   const [loadingAdd, setLoadingAdd] = useState(false);
   const [loadingDelete, setLoadingDelete] = useState(false);
   const [rowSelectionModel, setRowSelectionModel] = useState([]);
- 
+  
+  const rows = users 
+
   const showSeleted = () => {
     setLoadingAdd(true);
+    //console.log(rows)
+    let userSelected = []
 
     rowSelectionModel.map((item) => {
       console.log(rows[item - 1]);
+      userSelected.push(rows[item - 1])
     });
+
+    userSelected.push(rowSelectionModel)
+    console.log(rowSelectionModel)
+    console.log(userSelected[0].firstName)
+    console.log(Object.fromEntries(userSelected));
+    console.log(Object.assign(userSelected));
 
     setTimeout(() => {
       setLoadingAdd(false);
@@ -63,7 +72,7 @@ export default function CrudTabe() {
           pagination: {
             paginationModel: {
               //proleSize: 5,
-              pageSize:5,
+              pageSize: 5,
             },
           },
         }}
@@ -83,22 +92,26 @@ export default function CrudTabe() {
         sx={{ "& > button": { mt: 2, ml: 2 } }}
         p={2}
       >
-        <LoadingButton
+        <LoadingButton sx={{ mr: 2 }}
           size="small"
+          //onClick={() => setEditUsers(rows)}
           onClick={showSeleted}
           loading={loadingAdd}
           variant="outlined"
           disabled={!loadingAdd ? false : true}
+          component={NavLink} 
+          to="/crud-edit"
         >
           Edit
         </LoadingButton>
-        <LoadingButton
+        <LoadingButton sx={{ ml: 2 }}
           size="small"
           //onClick={showSeleted}
           loading={loadingDelete}
           variant="outlined"
           color="error"
-          disabled={!loadingDelete ? false : true}
+          disabled={!loadingDelete ? false : true} 
+          component={NavLink} 
         >
           Delete
         </LoadingButton>

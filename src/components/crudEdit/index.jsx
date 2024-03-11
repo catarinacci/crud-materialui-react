@@ -1,5 +1,6 @@
 import { LoadingButton } from "@mui/lab";
 import {
+  Alert,
   Box,
   Card,
   CardContent,
@@ -13,10 +14,8 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import Alert from "@mui/material/Alert";
-//import usuarios from "../../helper/usuarios.json";
 
-export default function CrudForm({ addUsers }) {
+export default function CrudEdit() {
   const dataEspecialist = [
     {
       id: 1,
@@ -58,7 +57,6 @@ export default function CrudForm({ addUsers }) {
   const [input, setInput] = useState("");
   const [open, setOpen] = useState(false);
   //const [user, setUser] = useState()
-  
 
   const handleOnchange = (e) => {
     // console.log(e.target.value.length);
@@ -118,56 +116,54 @@ export default function CrudForm({ addUsers }) {
 
     if (formData.firstName == "" || formData.firstName === undefined) {
       setFirstNameError(true);
-      variablef = true
-      //console.log(variable,"var") 
+      variablef = true;
+      //console.log(variable,"var")
       console.log("campo firstname vacio");
     } else if (regexn.test(firstNamef)) {
       console.log("campo firstname con texto");
     } else {
       console.log("firsname es numero");
       setFirstNameTextError(true);
-      variablef = true
+      variablef = true;
       setError("erroFirstnameText");
     }
 
     if (formData.lastName == "" || formData.lastName === undefined) {
       setLastnameError(true);
-      variablel = true
+      variablel = true;
       console.log("campo lastname vacio");
     } else if (regexl.test(lastNamel)) {
       console.log("campo lastname con texto");
     } else {
       console.log("lastname es un numero");
       setLastnameTextError(true);
-      variablel = true
+      variablel = true;
       setError("erroLastnameText");
     }
 
     if (formData.role === 0 || formData.role === undefined) {
       setRoleError(true);
-      variabler = true
+      variabler = true;
       console.log("campo rol vacio");
-    } 
-    else {
+    } else {
       console.log("campo rol seleccionado");
     }
 
+    // if (!variablef && !variablel && !variabler) {
+    //  //formData.id = Math.floor(Math.random() * 100)
+    //   console.log(formData)
 
-    if (!variablef && !variablel && !variabler) {
-     //formData.id = Math.floor(Math.random() * 100)
-      console.log(formData)
+    //   formData.id = 10
 
-      formData.id = 10
+    //   addUsers(formData);
 
-      addUsers(formData);
-
-      setFormData({
-        id: null,
-        firstName: "",
-        lastName: "",
-        role: 0,
-      });
-    }
+    //   setFormData({
+    //     id: null,
+    //     firstName: "",
+    //     lastName: "",
+    //     role: 0,
+    //   });
+    // }
     console.log(formData.id);
     console.log(formData.firstName);
     console.log(formData.lastName);
@@ -177,7 +173,6 @@ export default function CrudForm({ addUsers }) {
       setLoadingAdd(false);
     }, 1000);
   };
-
 
   const handleCancel = (firstName, lastName, role) => {
     setLoadingCancel(true);
@@ -223,8 +218,7 @@ export default function CrudForm({ addUsers }) {
                 }
                 label="FirsName"
                 required
-                helperText=// {()=>{handleErrorText(error, firstNameError)}}
-                {
+                helperText={ // {()=>{handleErrorText(error, firstNameError)}}
                   error === "erroFirstnameText"
                     ? "Solo ingrsar texto"
                     : "Obligatory field"
@@ -296,7 +290,7 @@ export default function CrudForm({ addUsers }) {
                   disabled={!loadingAdd ? false : true}
                   color="success"
                 >
-                  Add
+                  Acept
                 </LoadingButton>
                 <LoadingButton
                   type="reset"

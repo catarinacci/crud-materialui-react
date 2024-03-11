@@ -8,7 +8,7 @@ export default function CarouselUi(){
     return(
         <>
                 
-        <Carousel>
+        <Carousel >
             {
                 slider.map( (item, i) => <ItemUi key={i} item={item} /> )               
             }
